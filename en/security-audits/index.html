@@ -138,8 +138,21 @@ p { margin: 0; }
 .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: var(--space-6) var(--space-10); margin: 0; }
 .contact-grid dt { font-family: var(--font-display); font-size: 12px; line-height: 16px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; opacity: 0.85; margin-bottom: var(--space-1); }
 .contact-grid dd { margin: 0; font-size: 18px; line-height: 28px; overflow-wrap: anywhere; }
-.contact .gem { position: absolute; right: max(16px, env(safe-area-inset-right, 0px)); top: var(--space-16); width: 56px; height: auto; display: none; }
-@media (min-width: 720px) { .contact .gem { display: block; right: 32px; } }
+.contact-grid { align-content: start; }
+.contact-cols { display: grid; gap: var(--space-10); }
+@media (min-width: 860px) { .contact-cols { grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); gap: var(--space-16); } .contact-cols .contact-grid { grid-template-columns: 1fr; } }
+.contact-form { display: grid; gap: var(--space-4); min-width: 0; }
+.contact-form label { display: grid; gap: var(--space-1); font-size: 14px; line-height: 20px; font-weight: 600; }
+.contact-form input, .contact-form textarea { font: 400 16px/24px var(--font-text); color: var(--ink); background: var(--surface); border: 1px solid var(--surface); border-radius: var(--radius-sm); padding: 10px 12px; width: 100%; min-width: 0; }
+.contact-form textarea { resize: vertical; }
+.contact :focus-visible { outline-color: var(--on-graphite); }
+.contact-form .trap { position: absolute; left: -9999px; }
+.form-foot { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-4); }
+.contact-form button { cursor: pointer; }
+.form-note { font-size: 14px; line-height: 20px; opacity: 0.85; }
+.form-status { font-weight: 600; }
+.thanks .wrap { padding-block: 96px; display: grid; gap: var(--space-6); justify-items: start; }
+.thanks h1 { font-size: clamp(34px, 5.5vw, 52px); line-height: 1.08; }
 
 .site-footer .wrap { padding-block: var(--space-6); display: flex; flex-wrap: wrap; gap: var(--space-4) var(--space-6); justify-content: space-between; font-size: 14px; line-height: 20px; color: var(--ink-muted); }
 
@@ -254,15 +267,26 @@ p { margin: 0; }
   </section>
   <section class="contact" id="contact">
     <div class="wrap">
-      <svg class="gem" viewBox="0 0 54 64" aria-hidden="true"><path fill="#ffffff" d="M24.45 0 L6.15 37.4 C2.75 29.8 0.45 19.8 0.45 5.4 Q11.55 0 24.45 0Z M29.55 0 L47.85 37.4 C51.25 29.8 53.55 19.8 53.55 5.4 Q42.45 0 29.55 0Z"/><path fill="#ef4136" d="M27 25 L13.85 50.6 L27 63.3Z"/><path fill="#be1e2d" d="M27 25 L40.15 50.6 L27 63.3Z"/></svg>
       <div class="section-head">
         <h2>Tell us what needs checking.</h2>
       </div>
-      <dl class="contact-grid">
-        <div><dt>Email</dt><dd><span class="js-email" data-u="sjorib" data-d="vl.acitylana">birojs (at) analytica (dot) lv</span></dd></div>
-        <div><dt>Phone</dt><dd><a href="tel:+37167471283">+371 67471283</a></dd></div>
-        <div><dt>Address</dt><dd>Dzeņu iela 3, Sigulda, LV-2150, Latvia</dd></div>
-      </dl>
+      <div class="contact-cols">
+        <form class="contact-form" name="contact" method="POST" action="/en/thank-you/" data-netlify="true" netlify-honeypot="bot-field" data-preview-note="This is a preview: the form sends messages only on the live site.">
+          <input type="hidden" name="form-name" value="contact">
+          <input type="hidden" name="language" value="en">
+          <p class="trap"><label>Leave this field empty <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+          <label>Name<input id="cfname" type="text" name="name" autocomplete="name" required></label>
+          <label>Email<input id="cfemail" type="email" name="email" autocomplete="email" required></label>
+          <label>Organisation (optional)<input id="cforg" type="text" name="organisation" autocomplete="organization"></label>
+          <label>Message<textarea id="cfmessage" name="message" rows="5" required></textarea></label>
+          <div class="form-foot"><button class="btn btn-primary" type="submit">Send</button><p class="form-note">We use your details only to reply to this message.</p></div>
+          <p class="form-status" role="status" hidden></p>
+        </form>
+        <dl class="contact-grid">
+          <div><dt>Phone</dt><dd><a href="tel:+37167471283">+371 67471283</a></dd></div>
+          <div><dt>Address</dt><dd>Dzeņu iela 3, Sigulda, LV-2150, Latvia</dd></div>
+        </dl>
+      </div>
     </div>
   </section>
 </main>
@@ -273,17 +297,5 @@ p { margin: 0; }
     <span>© 2026 Analytica</span>
   </div>
 </footer>
-<script>
-/* The address is not in the page source: it is stored reversed in two parts and assembled in the browser. */
-(function () {
-  var rev = function (s) { return s.split('').reverse().join(''); };
-  document.querySelectorAll('.js-email').forEach(function (el) {
-    var addr = rev(el.dataset.u) + String.fromCharCode(64) + rev(el.dataset.d);
-    var a = document.createElement('a');
-    a.href = 'mai' + 'lto:' + addr; a.textContent = addr;
-    el.replaceWith(a);
-  });
-})();
-</script>
 </body>
 </html>

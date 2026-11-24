@@ -28,7 +28,12 @@ HOME = {
 }
 SWITCH = {'lv': ('en', 'EN', 'In English'), 'en': ('lv', 'LV', 'Latviešu valodā')}
 
-def path(page, lang): return ('/' if lang == 'lv' else '/en/') if page == 'home' else PAGES[page]['path'][lang]
+THANKS = {'lv': dict(path='/paldies/', title='Paldies | Analytica', h1='Paldies, ziņa ir saņemta.', p='Atbildēsim, cik drīz vien iespējams.', back='Uz sākumlapu'),
+          'en': dict(path='/en/thank-you/', title='Thank you | Analytica', h1='Thank you, we have your message.', p='We will reply as soon as we can.', back='Back to the home page')}
+
+def path(page, lang):
+    if page == 'thanks': return THANKS[lang]['path']
+    return ('/' if lang == 'lv' else '/en/') if page == 'home' else PAGES[page]['path'][lang]
 
 def home_body(lang):
     f = 'src/body.lv.html' if lang == 'lv' else 'src/body.html'
@@ -88,8 +93,26 @@ def service_body(page, lang):
   </section>
 ''' + tail
 
-def body(page, lang): return home_body(lang) if page == 'home' else service_body(page, lang)
-def meta(page, lang): return HOME[lang] if page == 'home' else PAGES[page][lang]
+def thanks_body(lang):
+    h = home_body(lang); t = THANKS[lang]
+    header = h[:h.index('<main')]
+    header = re.sub(r'href="#top"', 'href="@@P:home@@"', header)
+    header = re.sub(r'href="#(services|expertise|experience|partners|contact)"', r'href="@@P:home@@#\1"', header)
+    footer = h[h.index('<footer'):]
+    return header + f'''<main id="top">
+  <section class="thanks">
+    <div class="wrap">
+      <h1>{t['h1']}</h1>
+      <p class="lead">{t['p']}</p>
+      <a class="btn btn-quiet" href="@@P:home@@">{t['back']}</a>
+    </div>
+  </section>
+</main>
+
+''' + footer
+
+def body(page, lang): return home_body(lang) if page == 'home' else thanks_body(lang) if page == 'thanks' else service_body(page, lang)
+def meta(page, lang): return HOME[lang] if page == 'home' else dict(THANKS[lang], desc='') if page == 'thanks' else PAGES[page][lang]
 strip = lambda s: re.sub(r'<[^>]+>', '', s)
 
 def jsonld(page, lang):
@@ -109,28 +132,17 @@ def jsonld(page, lang):
           {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": strip(a)}} for q, a in m['faq']]}]
     return json.dumps({"@context": "https://schema.org", "@graph": graph}, ensure_ascii=False)
 
-EMAIL_JS = """<script>
-/* The address is not in the page source: it is stored reversed in two parts and assembled in the browser. */
-(function () {
-  var rev = function (s) { return s.split('').reverse().join(''); };
-  document.querySelectorAll('.js-email').forEach(function (el) {
-    var addr = rev(el.dataset.u) + String.fromCharCode(64) + rev(el.dataset.d);
-    var a = document.createElement('a');
-    a.href = 'mai' + 'lto:' + addr; a.textContent = addr;
-    el.replaceWith(a);
-  });
-})();
-</script>
-"""
 ALL = ['home'] + ORDER
-LINK = re.compile(r'href="@@P:(\w+)@@(?:#(\w+))?"')
+LINK = re.compile(r'(href|action)="@@P:(\w+)@@(?:#(\w+))?"')
 
 # --- Netlify pages ---
-for page in ALL:
+for page in ALL + ['thanks']:
     for lang in LANGS:
         m = meta(page, lang); other, label, aria = SWITCH[lang]
         b = body(page, lang).replace('@@LANG@@', f'<a class="lang" href="{path(page, other)}" lang="{other}" hreflang="{other}" aria-label="{aria}">{label}</a>')
-        b = LINK.sub(lambda x: f'href="{path(x.group(1), lang)}{"#" + x.group(2) if x.group(2) else ""}"', b)
+        b = LINK.sub(lambda x: f'{x.group(1)}="{path(x.group(2), lang)}{"#" + x.group(3) if x.group(3) else ""}"', b)
+        if page == 'thanks': head_extra = '<meta name="robots" content="noindex">'
+        else: head_extra = f'<script type="application/ld+json">{jsonld(page, lang)}</script>'
         out = root/path(page, lang).strip('/')/'index.html'
         out.parent.mkdir(parents=True, exist_ok=True)
         out.write_text(f'''<!doctype html>
@@ -150,7 +162,7 @@ for page in ALL:
 <meta property="og:description" content="{m['desc']}">
 <meta property="og:url" content="{SITE}{path(page, lang)}">
 <meta property="og:locale" content="{HOME[lang]['locale']}">
-<script type="application/ld+json">{jsonld(page, lang)}</script>
+{head_extra}
 <link rel="icon" type="image/svg+xml" href="/assets/analytica-icon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -159,7 +171,7 @@ for page in ALL:
 {css}</style>
 </head>
 <body>
-{b}{EMAIL_JS}</body>
+{b}</body>
 </html>
 ''')
 
@@ -178,8 +190,9 @@ for lang in LANGS:
             b = re.sub(r'id="([a-z]+)"', lambda x: f'id="{view}-{x.group(1)}"', b)
             b = re.sub(r'href="#([a-z]+)"', lambda x: f'href="#{view}-{x.group(1)}"', b)
         def go(x):
-            t = f'{lang}-{x.group(1)}'
-            return f'href="#" data-go="{t}"' + (f' data-anchor="{aid(t, x.group(2))}"' if x.group(2) else '')
+            if x.group(1) == 'action': return 'action="#"'
+            t = f'{lang}-{x.group(2)}'
+            return f'href="#" data-go="{t}"' + (f' data-anchor="{aid(t, x.group(3))}"' if x.group(3) else '')
         b = LINK.sub(go, b)
         views.append(f'<div data-view="{view}" lang="{lang}"{"" if view == "lv-home" else " hidden"}>\n{b}</div>\n')
 (root/'preview').mkdir(exist_ok=True)
@@ -188,7 +201,7 @@ for lang in LANGS:
 {fonts}
 <style>
 {css}</style>
-{''.join(views)}{EMAIL_JS}<script>
+{''.join(views)}<script>
 (function () {{
   function show(view, anchor) {{
     var found = false;
@@ -201,6 +214,10 @@ for lang in LANGS:
   document.addEventListener('click', function (e) {{
     var a = e.target.closest('a[data-go]'); if (!a) return;
     e.preventDefault(); show(a.dataset.go, a.dataset.anchor);
+  }});
+  document.addEventListener('submit', function (e) {{
+    var f = e.target.closest('form.contact-form'); if (!f) return;
+    e.preventDefault(); var s = f.querySelector('.form-status'); s.textContent = f.dataset.previewNote; s.hidden = false;
   }});
   var saved = null; try {{ saved = localStorage.getItem('view'); }} catch (e) {{}}
   if (saved && saved !== 'lv-home') show(saved);

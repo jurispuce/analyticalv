@@ -115,8 +115,21 @@ p { margin: 0; }
 .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: var(--space-6) var(--space-10); margin: 0; }
 .contact-grid dt { font-family: var(--font-display); font-size: 12px; line-height: 16px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; opacity: 0.85; margin-bottom: var(--space-1); }
 .contact-grid dd { margin: 0; font-size: 18px; line-height: 28px; overflow-wrap: anywhere; }
-.contact .gem { position: absolute; right: max(16px, env(safe-area-inset-right, 0px)); top: var(--space-16); width: 56px; height: auto; display: none; }
-@media (min-width: 720px) { .contact .gem { display: block; right: 32px; } }
+.contact-grid { align-content: start; }
+.contact-cols { display: grid; gap: var(--space-10); }
+@media (min-width: 860px) { .contact-cols { grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); gap: var(--space-16); } .contact-cols .contact-grid { grid-template-columns: 1fr; } }
+.contact-form { display: grid; gap: var(--space-4); min-width: 0; }
+.contact-form label { display: grid; gap: var(--space-1); font-size: 14px; line-height: 20px; font-weight: 600; }
+.contact-form input, .contact-form textarea { font: 400 16px/24px var(--font-text); color: var(--ink); background: var(--surface); border: 1px solid var(--surface); border-radius: var(--radius-sm); padding: 10px 12px; width: 100%; min-width: 0; }
+.contact-form textarea { resize: vertical; }
+.contact :focus-visible { outline-color: var(--on-graphite); }
+.contact-form .trap { position: absolute; left: -9999px; }
+.form-foot { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-4); }
+.contact-form button { cursor: pointer; }
+.form-note { font-size: 14px; line-height: 20px; opacity: 0.85; }
+.form-status { font-weight: 600; }
+.thanks .wrap { padding-block: 96px; display: grid; gap: var(--space-6); justify-items: start; }
+.thanks h1 { font-size: clamp(34px, 5.5vw, 52px); line-height: 1.08; }
 
 .site-footer .wrap { padding-block: var(--space-6); display: flex; flex-wrap: wrap; gap: var(--space-4) var(--space-6); justify-content: space-between; font-size: 14px; line-height: 20px; color: var(--ink-muted); }
 

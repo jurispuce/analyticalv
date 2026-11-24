@@ -157,15 +157,26 @@
 
   <section class="contact" id="contact">
     <div class="wrap">
-      <svg class="gem" viewBox="0 0 54 64" aria-hidden="true">@@ICON_REVERSED@@</svg>
       <div class="section-head">
         <h2>Pastāstiet, kas jāpārbauda.</h2>
       </div>
-      <dl class="contact-grid">
-        <div><dt>E-pasts</dt><dd><span class="js-email" data-u="sjorib" data-d="vl.acitylana">birojs (at) analytica (punkts) lv</span></dd></div>
-        <div><dt>Tālrunis</dt><dd><a href="tel:+37167471283">+371 67471283</a></dd></div>
-        <div><dt>Adrese</dt><dd>Dzeņu iela 3, Sigulda, LV-2150</dd></div>
-      </dl>
+      <div class="contact-cols">
+        <form class="contact-form" name="contact" method="POST" action="@@P:thanks@@" data-netlify="true" netlify-honeypot="bot-field" data-preview-note="Šis ir priekšskatījums: forma ziņas nosūta tikai publicētajā lapā.">
+          <input type="hidden" name="form-name" value="contact">
+          <input type="hidden" name="language" value="lv">
+          <p class="trap"><label>Neaizpildiet šo lauku <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+          <label>Vārds<input id="cfname" type="text" name="name" autocomplete="name" required></label>
+          <label>E-pasts<input id="cfemail" type="email" name="email" autocomplete="email" required></label>
+          <label>Organizācija (nav obligāti)<input id="cforg" type="text" name="organisation" autocomplete="organization"></label>
+          <label>Ziņa<textarea id="cfmessage" name="message" rows="5" required></textarea></label>
+          <div class="form-foot"><button class="btn btn-primary" type="submit">Nosūtīt</button><p class="form-note">Jūsu datus izmantosim tikai, lai atbildētu uz šo ziņu.</p></div>
+          <p class="form-status" role="status" hidden></p>
+        </form>
+        <dl class="contact-grid">
+          <div><dt>Tālrunis</dt><dd><a href="tel:+37167471283">+371 67471283</a></dd></div>
+          <div><dt>Adrese</dt><dd>Dzeņu iela 3, Sigulda, LV-2150</dd></div>
+        </dl>
+      </div>
     </div>
   </section>
 </main>
