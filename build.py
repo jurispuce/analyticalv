@@ -4,7 +4,7 @@ and preview/analytica-site.html, one file holding every page as a switchable vie
 import re, json, pathlib, sys
 root = pathlib.Path(__file__).parent
 sys.path.insert(0, str(root/'src'))
-from pages import PAGES, ORDER, UI
+from pages import PAGES, ORDER, UI, PRIVACY
 
 SITE = 'https://analytica.lv'  # the domain the site will be served from; used for canonical links, sitemap and structured data
 LANGS = ['lv', 'en']
@@ -33,6 +33,7 @@ THANKS = {'lv': dict(path='/paldies/', title='Paldies | Analytica', h1='Paldies,
 
 def path(page, lang):
     if page == 'thanks': return THANKS[lang]['path']
+    if page == 'privacy': return PRIVACY['path'][lang]
     return ('/' if lang == 'lv' else '/en/') if page == 'home' else PAGES[page]['path'][lang]
 
 def home_body(lang):
@@ -111,8 +112,35 @@ def thanks_body(lang):
 
 ''' + footer
 
-def body(page, lang): return home_body(lang) if page == 'home' else thanks_body(lang) if page == 'thanks' else service_body(page, lang)
-def meta(page, lang): return HOME[lang] if page == 'home' else dict(THANKS[lang], desc='') if page == 'thanks' else PAGES[page][lang]
+def privacy_body(lang):
+    h = home_body(lang); c = PRIVACY[lang]
+    header = h[:h.index('<main')]
+    header = re.sub(r'href="#top"', 'href="@@P:home@@"', header)
+    header = re.sub(r'href="#(services|expertise|experience|partners|contact)"', r'href="@@P:home@@#\1"', header)
+    footer = h[h.index('<footer'):]
+    def block(b): return '<ul>' + ''.join(f'<li>{x}</li>' for x in b) + '</ul>' if isinstance(b, list) else f'<p>{b}</p>'
+    secs = '\n'.join(f'        <section><h2>{t}</h2>' + ''.join(block(b) for b in bs) + '</section>' for t, bs in c['sections'])
+    return header + f'''<main id="top">
+  <section class="page-hero">
+    <div class="wrap">
+      <h1>{c['h1']}</h1>
+      <p class="lead">{c['lead']}</p>
+      <p class="updated">{c['updated']}</p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="wrap">
+      <div class="doc">
+{secs}
+      </div>
+    </div>
+  </section>
+</main>
+
+''' + footer
+
+def body(page, lang): return home_body(lang) if page == 'home' else thanks_body(lang) if page == 'thanks' else privacy_body(lang) if page == 'privacy' else service_body(page, lang)
+def meta(page, lang): return HOME[lang] if page == 'home' else dict(THANKS[lang], desc='') if page == 'thanks' else PRIVACY[lang] if page == 'privacy' else PAGES[page][lang]
 strip = lambda s: re.sub(r'<[^>]+>', '', s)
 
 def jsonld(page, lang):
@@ -126,13 +154,15 @@ def jsonld(page, lang):
         org.update({"description": m['desc'], "inLanguage": lang, "hasOfferCatalog": {"@type": "OfferCatalog", "name": "Services", "itemListElement": [
             {"@type": "Offer", "itemOffered": {"@type": "Service", "name": PAGES[k][lang]['name'], "url": SITE + path(k, lang)}} for k in ORDER]}})
         graph = [org]
+    elif page == 'privacy':
+        graph = [org]
     else:
         graph = [org,
           {"@type": "Service", "name": m['name'], "description": m['desc'], "url": SITE + path(page, lang), "inLanguage": lang, "provider": {"@id": SITE + "/#organization"}, "areaServed": {"@type": "Country", "name": "Latvia"}},
           {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": strip(a)}} for q, a in m['faq']]}]
     return json.dumps({"@context": "https://schema.org", "@graph": graph}, ensure_ascii=False)
 
-ALL = ['home'] + ORDER
+ALL = ['home'] + ORDER + ['privacy']
 LINK = re.compile(r'(href|action)="@@P:(\w+)@@(?:#(\w+))?"')
 
 # --- Netlify pages ---

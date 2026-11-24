@@ -190,6 +190,14 @@ p { margin: 0; }
 .faq p { color: var(--ink-muted); }
 .proof { font-size: 20px; line-height: 30px; max-width: 60ch; }
 .others { display: flex; flex-wrap: wrap; gap: var(--space-2) var(--space-6); list-style: none; margin: 0; padding: 0; }
+
+/* Privacy policy */
+.doc { display: grid; gap: var(--space-10); max-width: 720px; }
+.doc section { display: grid; gap: var(--space-4); }
+.doc h2 { font-size: 24px; line-height: 30px; }
+.doc ul { margin: 0; padding-left: 20px; display: grid; gap: var(--space-2); }
+.updated { font-size: 14px; line-height: 20px; color: var(--ink-muted); }
+.site-footer a { color: inherit; }
 </style>
 </head>
 <body>
@@ -279,7 +287,7 @@ p { margin: 0; }
           <label>E-pasts<input id="cfemail" type="email" name="email" autocomplete="email" required></label>
           <label>Organizācija (nav obligāti)<input id="cforg" type="text" name="organisation" autocomplete="organization"></label>
           <label>Ziņa<textarea id="cfmessage" name="message" rows="5" required></textarea></label>
-          <div class="form-foot"><button class="btn btn-primary" type="submit">Nosūtīt</button><p class="form-note">Jūsu datus izmantosim tikai, lai atbildētu uz šo ziņu.</p></div>
+          <div class="form-foot"><button class="btn btn-primary" type="submit">Nosūtīt</button><p class="form-note">Jūsu datus izmantosim tikai, lai atbildētu uz šo ziņu. <a href="/privatuma-politika/">Privātuma politika</a></p></div>
           <p class="form-status" role="status" hidden></p>
         </form>
         <dl class="contact-grid">
@@ -293,7 +301,7 @@ p { margin: 0; }
 
 <footer class="site-footer">
   <div class="wrap">
-    <span>SIA Analytica · Reģ. Nr. 40003823267</span>
+    <span>SIA Analytica · Reģ. Nr. 40003823267 · <a href="/privatuma-politika/">Privātuma politika</a></span>
     <span>© 2026 Analytica</span>
   </div>
 </footer>

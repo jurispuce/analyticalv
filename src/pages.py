@@ -102,3 +102,52 @@ PAGES = {
  },
 }
 ORDER = ['audits', 'mk397', 'iso', 'manager']
+
+# Privacy policy. Each section: (heading, [blocks]); a block is a paragraph string or a list of bullet strings.
+PRIVACY = {
+ 'path': {'lv': '/privatuma-politika/', 'en': '/en/privacy-policy/'},
+ 'lv': dict(
+  name='Privātuma politika', title='Privātuma politika | Analytica',
+  desc='Kā SIA Analytica kā pārzinis apstrādā personas datus, ko nododat mums, izmantojot šo vietni, saziņas formu, tālruni vai saraksti.',
+  h1='Privātuma politika', updated='Spēkā no 2026. gada 24. novembra',
+  lead='Šī politika skaidro, kā SIA Analytica apstrādā personas datus, ko jūs mums nododat, izmantojot šo vietni, saziņas formu, tālruni vai saraksti.',
+  sections=[
+   ('Pārzinis', ['Personas datu pārzinis ir SIA Analytica, reģistrācijas Nr. 40003823267, juridiskā adrese: Dzeņu iela 3, Sigulda, LV-2150, Latvija. Tālrunis: +371 67471283.',
+     'Jautājumus par personas datu apstrādi varat nosūtīt, izmantojot <a href="@@P:home@@#contact">saziņas formu</a>, vai pa pastu uz juridisko adresi.']),
+   ('Kādus datus mēs apstrādājam', [['Saziņas formā norādītie dati: vārds, e-pasta adrese, organizācija (ja to norādāt) un ziņas saturs.', 'Dati, ko nododat, sazinoties ar mums pa tālruni vai sarakstē.', 'Tehniskie dati, ko vietnes apmeklējuma laikā saņem mitināšanas pakalpojuma sniedzējs, piemēram, IP adrese, pārlūka veids un apmeklējuma laiks.'],
+     'Lūdzam saziņas formā nenorādīt īpašu kategoriju personas datus un konfidenciālu informāciju.']),
+   ('Nolūki un tiesiskais pamats', [['Lai atbildētu uz jūsu jautājumu un sagatavotu piedāvājumu: pasākumu veikšana pēc jūsu pieprasījuma pirms līguma noslēgšanas (Vispārīgās datu aizsardzības regulas 6. panta 1. punkta b) apakšpunkts).', 'Lai uzturētu saziņu ar klientiem un sadarbības partneriem un nodrošinātu vietnes drošību: mūsu leģitīmās intereses (6. panta 1. punkta f) apakšpunkts).', 'Lai izpildītu juridiskus pienākumus, piemēram, grāmatvedības prasības (6. panta 1. punkta c) apakšpunkts).'],
+     'Mēs neizmantojam jūsu datus automatizētai lēmumu pieņemšanai vai profilēšanai un nepārdodam tos.']),
+   ('Datu saņēmēji', ['Datus saņem tikai tie Analytica darbinieki, kuriem tie nepieciešami darba pienākumu veikšanai, un apstrādātāji, kas nodrošina vietnes darbību:',
+     ['Netlify, Inc. (ASV): vietnes mitināšana un saziņas formas ziņu saņemšana un glabāšana.', 'Google Ireland Limited: vietnē izmantoto fontu piegāde (Google Fonts). Ielādējot fontus, jūsu pārlūks nodod Google jūsu IP adresi.'],
+     'Ja dati tiek nodoti ārpus Eiropas Ekonomikas zonas, nodošana notiek, pamatojoties uz Eiropas Komisijas lēmumu par aizsardzības līmeņa pietiekamību vai standarta līguma klauzulām.']),
+   ('Glabāšanas ilgums', ['Saziņas formas ziņas un saraksti glabājam tik ilgi, cik nepieciešams, lai atbildētu un uzturētu saziņu, bet ne ilgāk kā divus gadus pēc pēdējās saziņas, ja vien normatīvie akti vai noslēgts līgums neprasa ilgāku termiņu.']),
+   ('Sīkdatnes', ['Šī vietne neizmanto sīkdatnes un analītikas rīkus.']),
+   ('Jūsu tiesības', ['Jums ir tiesības:', ['piekļūt saviem datiem un saņemt to kopiju;', 'lūgt labot neprecīzus datus;', 'lūgt dzēst datus vai ierobežot to apstrādi;', 'iebilst pret apstrādi, kas balstīta uz leģitīmajām interesēm;', 'saņemt savus datus pārnesamā formātā.'],
+     'Lai izmantotu šīs tiesības, sazinieties ar mums. Atbildēsim mēneša laikā. Jums ir arī tiesības iesniegt sūdzību <a href="https://www.dvi.gov.lv" target="_blank" rel="noopener">Datu valsts inspekcijā</a> (Elijas iela 17, Rīga, LV-1050).']),
+   ('Klientu projekti', ['Personas datu apstrādi, ko veicam, sniedzot pakalpojumus klientiem, nosaka ar klientu noslēgtais līgums.']),
+   ('Izmaiņas', ['Šo politiku varam atjaunināt. Aktuālā redakcija vienmēr ir pieejama šajā lapā.']),
+  ]),
+ 'en': dict(
+  name='Privacy policy', title='Privacy policy | Analytica',
+  desc='How SIA Analytica, as data controller, processes personal data you pass to us through this website, the contact form, phone or correspondence.',
+  h1='Privacy policy', updated='In effect from 24 November 2026',
+  lead='This policy explains how SIA Analytica processes the personal data you pass to us through this website, the contact form, phone or correspondence.',
+  sections=[
+   ('Controller', ['The data controller is SIA Analytica, registration No. 40003823267, registered address: Dzeņu iela 3, Sigulda, LV-2150, Latvia. Phone: +371 67471283.',
+     'You can send questions about the processing of personal data through the <a href="@@P:home@@#contact">contact form</a> or by post to the registered address.']),
+   ('What data we process', [['Data you enter in the contact form: name, email address, organisation (if you give it) and the content of your message.', 'Data you give us when you contact us by phone or in correspondence.', 'Technical data that the hosting provider receives when you visit the site, such as IP address, browser type and time of visit.'],
+     'Please do not include special categories of personal data or confidential information in the contact form.']),
+   ('Purposes and legal basis', [['To answer your enquiry and prepare a proposal: taking steps at your request before entering into a contract (Article 6(1)(b) of the General Data Protection Regulation).', 'To keep in contact with clients and partners and to keep the website secure: our legitimate interests (Article 6(1)(f)).', 'To meet legal obligations, such as accounting requirements (Article 6(1)(c)).'],
+     'We do not use your data for automated decision-making or profiling, and we do not sell it.']),
+   ('Recipients', ['Your data is seen only by Analytica staff who need it for their work, and by the processors that keep the website running:',
+     ['Netlify, Inc. (USA): website hosting, and receiving and storing contact form messages.', 'Google Ireland Limited: delivery of the fonts used on the site (Google Fonts). When the fonts load, your browser sends your IP address to Google.'],
+     'Where data is transferred outside the European Economic Area, the transfer is based on a European Commission adequacy decision or on standard contractual clauses.']),
+   ('How long we keep it', ['We keep contact form messages and correspondence for as long as needed to reply and stay in contact, and no longer than two years after the last contact, unless the law or a contract requires a longer period.']),
+   ('Cookies', ['This website does not use cookies or analytics tools.']),
+   ('Your rights', ['You have the right to:', ['access your data and receive a copy;', 'ask us to correct inaccurate data;', 'ask us to erase your data or restrict its processing;', 'object to processing based on legitimate interests;', 'receive your data in a portable format.'],
+     'To use these rights, contact us. We will reply within one month. You also have the right to lodge a complaint with the <a href="https://www.dvi.gov.lv" target="_blank" rel="noopener">Data State Inspectorate of Latvia</a> (Elijas iela 17, Riga, LV-1050).']),
+   ('Client engagements', ['Personal data we process while delivering services to clients is governed by the contract with that client.']),
+   ('Changes', ['We may update this policy. The current version is always available on this page.']),
+  ]),
+}
