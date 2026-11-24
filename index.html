@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="lv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ISO 27001 ieviešana, drošības auditi, MK 397 atbilstība | Analytica</title>
+<meta name="description" content="Analytica kopš 2006. gada: drošības auditi, ISO 27001 ieviešana, MK 397 atbilstība un kiberdrošības pārvaldnieks kā pakalpojums. Iekļauta Aizsardzības ministrijas kiberdrošības auditoru sarakstā.">
+<link rel="canonical" href="https://analytica.lv/">
+<link rel="alternate" hreflang="lv" href="https://analytica.lv/">
+<link rel="alternate" hreflang="en" href="https://analytica.lv/en/">
+<link rel="alternate" hreflang="x-default" href="https://analytica.lv/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Analytica">
+<meta property="og:title" content="ISO 27001 ieviešana, drošības auditi, MK 397 atbilstība | Analytica">
+<meta property="og:description" content="Analytica kopš 2006. gada: drošības auditi, ISO 27001 ieviešana, MK 397 atbilstība un kiberdrošības pārvaldnieks kā pakalpojums. Iekļauta Aizsardzības ministrijas kiberdrošības auditoru sarakstā.">
+<meta property="og:url" content="https://analytica.lv/">
+<meta property="og:locale" content="lv_LV">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "ProfessionalService", "@id": "https://analytica.lv/#organization", "name": "Analytica", "legalName": "SIA Analytica", "url": "https://analytica.lv/", "logo": "https://analytica.lv/assets/analytica-logo.svg", "foundingDate": "2006", "telephone": "+37167471283", "address": {"@type": "PostalAddress", "streetAddress": "Dzeņu iela 3", "addressLocality": "Sigulda", "postalCode": "LV-2150", "addressCountry": "LV"}, "areaServed": [{"@type": "Country", "name": "Latvia"}, "Europe"], "knowsAbout": ["ISO/IEC 27001", "MK noteikumi Nr. 397", "Nacionālās kiberdrošības likums", "NIS 2", "DORA", "penetration testing"], "description": "Analytica kopš 2006. gada: drošības auditi, ISO 27001 ieviešana, MK 397 atbilstība un kiberdrošības pārvaldnieks kā pakalpojums. Iekļauta Aizsardzības ministrijas kiberdrošības auditoru sarakstā.", "inLanguage": "lv", "hasOfferCatalog": {"@type": "OfferCatalog", "name": "Services", "itemListElement": [{"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Drošības auditi", "url": "https://analytica.lv/drosibas-auditi/"}}, {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "MK 397 atbilstība", "url": "https://analytica.lv/mk-397-atbilstiba/"}}, {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "ISO 27001 ieviešana", "url": "https://analytica.lv/iso-27001-ieviesana/"}}, {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Kiberdrošības pārvaldnieks", "url": "https://analytica.lv/kiberdrosibas-parvaldnieks/"}}]}}]}</script>
+<link rel="icon" type="image/svg+xml" href="/assets/analytica-icon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600&family=Source+Sans+3:wght@400;600&display=swap">
+<style>
+/* Layout: white page, one graphite slab cut at the angle of the logo's A (run 27 per rise 55), one red point per view. */
+:root {
+  --surface: #ffffff; --surface-raised: #f4f4f5; --surface-tint: #fdeceb;
+  --ink: #2b2c2e; --ink-muted: #58595b; --border: #d9dadc; --border-strong: #85868a;
+  --graphite: #58595b; --on-graphite: #ffffff; --red: #ef4136; --red-deep: #be1e2d; --on-red: #ffffff; --red-text: #be1e2d;
+  --logo-ink: #58595b;
+  --font-display: Outfit, Futura, "Century Gothic", "Avenir Next", sans-serif;
+  --font-text: "Source Sans 3", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --space-1: 4px; --space-2: 8px; --space-4: 16px; --space-6: 24px; --space-10: 40px; --space-16: 64px;
+  --radius-sm: 2px;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --surface: #1c1d1f; --surface-raised: #27282b; --surface-tint: #3a1f20; --ink: #f2f2f3; --ink-muted: #b4b5b8;
+  --border: #3a3b3e; --border-strong: #7d7e82; --red-text: #ff8a80; --logo-ink: #ffffff; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --surface: #1c1d1f; --surface-raised: #27282b; --surface-tint: #3a1f20; --ink: #f2f2f3; --ink-muted: #b4b5b8;
+  --border: #3a3b3e; --border-strong: #7d7e82; --red-text: #ff8a80; --logo-ink: #ffffff; color-scheme: dark }
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body { margin: 0; background: var(--surface); color: var(--ink); font-family: var(--font-text); font-size: 16px; line-height: 26px; -webkit-font-smoothing: antialiased; }
+img, svg { max-width: 100%; }
+a { color: var(--red-text); text-underline-offset: 3px; }
+:focus-visible { outline: 2px solid var(--red-text); outline-offset: 2px; }
+h1, h2, h3 { font-family: var(--font-display); font-weight: 500; margin: 0; text-wrap: balance; }
+p { margin: 0; }
+.wrap { max-width: 1120px; margin-inline: auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+@media (min-width: 720px) { .wrap { padding-left: max(32px, env(safe-area-inset-left, 0px)); padding-right: max(32px, env(safe-area-inset-right, 0px)); } }
+.logo-ink { fill: var(--logo-ink); }
+.eyebrow { font-family: var(--font-display); font-size: 12px; line-height: 16px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-muted); }
+
+/* Header */
+.site-header { border-bottom: 1px solid var(--border); }
+.site-header .wrap { display: flex; align-items: center; justify-content: space-between; gap: var(--space-6); padding-block: 20px; }
+.brand { display: block; line-height: 0; }
+.brand svg { height: 24px; width: auto; }
+.nav { display: flex; align-items: center; gap: var(--space-6); }
+.nav a { color: var(--ink); text-decoration: none; font-size: 15px; }
+.nav a:hover { color: var(--red-text); }
+.nav .nav-link { display: none; }
+@media (min-width: 860px) { .nav .nav-link { display: inline; } .brand svg { height: 28px; } }
+.btn { display: inline-block; font-family: var(--font-text); font-weight: 600; font-size: 16px; line-height: 24px; padding: 10px 20px; border-radius: var(--radius-sm); text-decoration: none; border: 1px solid transparent; }
+.btn-primary { background: var(--red-deep); color: var(--on-red); }
+.btn-primary:hover { background: #a41926; }
+.btn-quiet { border-color: var(--border-strong); color: var(--ink); }
+.btn-quiet:hover { border-color: var(--ink); }
+.nav a.btn { color: var(--on-red); padding: 6px 16px; font-size: 15px; }
+
+/* Hero */
+.hero { position: relative; overflow: hidden; border-bottom: 1px solid var(--border); }
+.hero .wrap { position: relative; display: grid; gap: var(--space-10); padding-block: var(--space-16); }
+.hero-copy { display: grid; gap: var(--space-6); max-width: 620px; min-width: 0; position: relative; z-index: 1; }
+.hero h1 { font-size: clamp(36px, 6vw, 56px); line-height: 1.07; letter-spacing: -0.01em; }
+.lead { font-size: 20px; line-height: 30px; color: var(--ink-muted); max-width: 56ch; }
+.cta { display: flex; flex-wrap: wrap; gap: var(--space-4); }
+.hero-art { display: none; }
+@media (min-width: 980px) {
+  .hero .wrap { padding-block: 96px; }
+  .hero-art { display: block; position: absolute; top: 0; bottom: 0; right: 0; width: 44%; height: 100%; }
+  .hero-art svg { position: absolute; inset: 0; width: 100%; height: 100%; max-width: none; }
+}
+.art-tint { fill: var(--surface-tint); } .art-graphite { fill: var(--graphite); } .art-red { fill: var(--red); } .art-deep { fill: var(--red-deep); } .art-cut { fill: var(--surface); }
+.facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: var(--space-6); margin: 0; padding-top: var(--space-6); border-top: 1px solid var(--border); max-width: 620px; }
+.facts div { min-width: 0; }
+.facts dt { font-family: var(--font-display); font-size: 28px; line-height: 34px; font-weight: 500; }
+.facts dd { margin: 0; font-size: 14px; line-height: 20px; color: var(--ink-muted); }
+
+/* Sections */
+.section .wrap { padding-block: var(--space-16); display: grid; gap: var(--space-10); }
+.section.raised { background: var(--surface-raised); }
+.section-head { display: grid; gap: var(--space-4); max-width: 680px; }
+.section-head h2 { font-size: clamp(26px, 4vw, 32px); line-height: 1.2; }
+.section-head p { color: var(--ink-muted); }
+.grid3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: var(--space-10) var(--space-10); }
+.item { display: grid; gap: var(--space-2); align-content: start; min-width: 0; }
+.item h3 { font-size: 20px; line-height: 26px; }
+.item p { color: var(--ink-muted); }
+
+/* Expertise */
+.cert-groups { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-10); }
+.cert-group { display: grid; gap: var(--space-4); align-content: start; min-width: 0; }
+.cert-group h3 { font-size: 20px; line-height: 26px; }
+.chips { display: flex; flex-wrap: wrap; gap: var(--space-2); list-style: none; margin: 0; padding: 0; }
+.chips li { font-size: 14px; line-height: 20px; padding: 4px 10px; border: 1px solid var(--border-strong); border-radius: var(--radius-sm); background: var(--surface); }
+.note { font-size: 14px; line-height: 20px; color: var(--ink-muted); max-width: 70ch; }
+
+/* Experience */
+.sectors { display: grid; gap: var(--space-10); }
+@media (min-width: 860px) { .sectors { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-16); } }
+.sector { display: grid; gap: var(--space-4); align-content: start; min-width: 0; }
+.sector > h3 { font-size: 24px; line-height: 30px; }
+.projects { list-style: none; margin: 0; padding: 0; border-top: 2px solid var(--ink); }
+.projects li { display: grid; gap: var(--space-1); padding-block: 20px; border-bottom: 1px solid var(--border); }
+.projects .when { font-family: var(--font-display); font-weight: 500; font-size: 14px; line-height: 20px; color: var(--ink-muted); font-variant-numeric: tabular-nums; }
+.projects h4 { font-family: var(--font-display); font-weight: 500; font-size: 20px; line-height: 26px; margin: 0; text-wrap: balance; }
+.projects p { color: var(--ink-muted); }
+
+/* Partners */
+.partners { display: grid; gap: var(--space-6); }
+@media (min-width: 720px) { .partners { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.partner { border: 1px solid var(--border); background: var(--surface); padding: var(--space-6); display: grid; gap: var(--space-4); align-content: start; min-width: 0; }
+.partner h3 { font-size: 24px; line-height: 30px; }
+.partner .by { font-size: 14px; line-height: 20px; color: var(--ink-muted); }
+.partner p { color: var(--ink-muted); }
+.also { display: grid; gap: var(--space-2); }
+.also h3 { font-size: 20px; line-height: 26px; }
+.also p { color: var(--ink-muted); max-width: 70ch; }
+
+/* Contact */
+.contact { background: var(--graphite); color: var(--on-graphite); position: relative; overflow: hidden; }
+.contact .wrap { padding-block: var(--space-16); display: grid; gap: var(--space-10); position: relative; }
+.contact h2 { font-size: clamp(28px, 4.5vw, 40px); line-height: 1.15; max-width: 18ch; }
+.contact a { color: var(--on-graphite); }
+.contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: var(--space-6) var(--space-10); margin: 0; }
+.contact-grid dt { font-family: var(--font-display); font-size: 12px; line-height: 16px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; opacity: 0.85; margin-bottom: var(--space-1); }
+.contact-grid dd { margin: 0; font-size: 18px; line-height: 28px; overflow-wrap: anywhere; }
+.contact .gem { position: absolute; right: max(16px, env(safe-area-inset-right, 0px)); top: var(--space-16); width: 56px; height: auto; display: none; }
+@media (min-width: 720px) { .contact .gem { display: block; right: 32px; } }
+
+.site-footer .wrap { padding-block: var(--space-6); display: flex; flex-wrap: wrap; gap: var(--space-4) var(--space-6); justify-content: space-between; font-size: 14px; line-height: 20px; color: var(--ink-muted); }
+
+/* Language switch */
+.nav a.lang { font-family: var(--font-display); font-weight: 500; font-size: 13px; letter-spacing: 0.14em; color: var(--ink-muted); border: 1px solid var(--border-strong); border-radius: var(--radius-sm); padding: 5px 9px; line-height: 18px; }
+.nav a.lang:hover { color: var(--ink); border-color: var(--ink); }
+
+.partner { grid-template-rows: auto 1fr auto; }
+.partner .more { font-weight: 600; justify-self: start; }
+.partner .more::after { content: " \2197"; }
+
+/* Service pages */
+.item h3 a { color: inherit; text-decoration: none; }
+.item h3 a::after { content: " \2192"; color: var(--red-text); }
+.item h3 a:hover { color: var(--red-text); }
+.page-hero { border-bottom: 1px solid var(--border); }
+.page-hero .wrap { display: grid; gap: var(--space-6); padding-block: var(--space-16); }
+.page-hero h1 { font-size: clamp(34px, 5.5vw, 52px); line-height: 1.08; letter-spacing: -0.01em; max-width: 18ch; }
+.page-hero .back { font-size: 14px; line-height: 20px; }
+.two { display: grid; gap: var(--space-10); }
+@media (min-width: 860px) { .two { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-16); } }
+.block { display: grid; gap: var(--space-4); align-content: start; min-width: 0; }
+.block h2 { font-size: 24px; line-height: 30px; }
+.plain { list-style: none; margin: 0; padding: 0; border-top: 2px solid var(--ink); }
+.plain li { padding-block: 12px; border-bottom: 1px solid var(--border); }
+.steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: var(--space-10); counter-reset: step; }
+.steps li { display: grid; gap: var(--space-2); align-content: start; min-width: 0; }
+.steps.numbered li { counter-increment: step; }
+.steps.numbered li::before { content: counter(step); font-family: var(--font-display); font-weight: 500; font-size: 28px; line-height: 34px; color: var(--ink-muted); font-variant-numeric: tabular-nums; }
+.steps h3 { font-size: 20px; line-height: 26px; }
+.steps p { color: var(--ink-muted); }
+.faq { display: grid; gap: var(--space-6); max-width: 760px; }
+.faq div { display: grid; gap: var(--space-2); }
+.faq h3 { font-size: 20px; line-height: 26px; }
+.faq p { color: var(--ink-muted); }
+.proof { font-size: 20px; line-height: 30px; max-width: 60ch; }
+.others { display: flex; flex-wrap: wrap; gap: var(--space-2) var(--space-6); list-style: none; margin: 0; padding: 0; }
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Analytica LV, sākumlapa"><svg viewBox="0 0 650 64" role="img" aria-label="Analytica LV"><path class="logo-ink" d="M24 0 L5.7 37.4 C2.3 29.8 0 19.8 0 5.4 Q11.1 0 24 0Z M29.1 0 L47.4 37.4 C50.8 29.8 53.1 19.8 53.1 5.4 Q42 0 29.1 0Z"/><path fill="#ef4136" d="M26.55 25 L13.4 50.6 L26.55 63.3Z"/><path fill="#be1e2d" d="M26.55 25 L39.7 50.6 L26.55 63.3Z"/><path class="logo-ink" d="M69.1 58.8 L96.1 3.8 L123.1 58.8 L113.1 58.8 L96.1 24.2 L79.1 58.8Z M142.1 3.8 L179.1 37.4 L179.1 3.8 L188.1 3.8 L188.1 58.8 L150.9 25 L150.9 58.8 L142.1 58.8Z M202.1 58.8 L229.1 3.8 L256.1 58.8 L246.1 58.8 L229.1 24.2 L212.1 58.8Z M272.1 3.8 L281.35 3.8 L281.35 50.05 L309.1 50.05 L309.1 58.8 L272.1 58.8Z M314.6 3.8 L326.1 3.8 L341.35 23.7 L356.6 3.8 L368.1 3.8 L345.85 32.4 L345.85 58.8 L336.85 58.8 L336.85 32.4Z M378.1 3.8 L424.1 3.8 L424.1 12.55 L405.6 12.55 L405.6 58.8 L396.6 58.8 L396.6 12.55 L378.1 12.55Z M440.1 3.8 L449.1 3.8 L449.1 58.8 L440.1 58.8Z M516.08 11.23 A27.9 27.9 0 1 0 516.08 51.37 L509.69 44.75 A18.7 18.7 0 1 1 509.69 17.85Z M529.1 58.8 L556.1 3.8 L583.1 58.8 L573.1 58.8 L556.1 24.2 L539.1 58.8Z M595.1 3.8 L600.3 3.8 L600.3 26.2 L613.6 26.2 L613.6 31.3 L595.1 31.3Z M621.6 3.8 L627.9 3.8 L635.6 19.4 L643.3 3.8 L649.6 3.8 L635.6 31.6Z"/></svg></a>
+    <nav class="nav" aria-label="Galvenā izvēlne">
+      <a class="nav-link" href="#services">Pakalpojumi</a>
+      <a class="nav-link" href="#expertise">Kompetence</a>
+      <a class="nav-link" href="#experience">Pieredze</a>
+      <a class="nav-link" href="#partners">Partneri</a>
+      <a class="lang" href="/en/" lang="en" hreflang="en" aria-label="In English">EN</a>
+      <a class="btn btn-primary" href="#contact">Kontakti</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="hero-art" aria-hidden="true">
+      <svg viewBox="0 0 520 520" preserveAspectRatio="xMaxYMid slice">
+        <path class="art-tint" d="M40 520 L295.3 0 L359.3 0 L104 520Z"/>
+        <path class="art-graphite" d="M104 520 L359.3 0 L620 0 L620 520Z"/>
+        <path class="art-cut" d="M300 520 L371 375.4 L442 520 L409.4 520 L371 441.8 L332.6 520Z"/>
+        <path class="art-red" d="M371 468 L345.5 520 L371 520Z"/>
+        <path class="art-deep" d="M371 468 L396.5 520 L371 520Z"/>
+      </svg>
+    </div>
+    <div class="wrap">
+      <div class="hero-copy">
+        <p class="eyebrow">Kiberdrošība kopš 2006. gada</p>
+        <h1>Neatkarīgi drošības auditi, testi un konsultācijas.</h1>
+        <p class="lead">Analytica ir Latvijas informācijas drošības uzņēmums. Jau divdesmit gadus auditējam, testējam un palīdzam pārvaldīt drošību valsts iestādēs, finanšu uzņēmumos un tehnoloģiju uzņēmumos.</p>
+        <div class="cta">
+          <a class="btn btn-primary" href="#contact">Sazināties</a>
+          <a class="btn btn-quiet" href="#experience">Mūsu pieredze</a>
+        </div>
+        <dl class="facts">
+          <div><dt>2006</dt><dd>Dibināts Latvijā</dd></div>
+          <div><dt>20 gadi</dt><dd>Auditi, testi un drošības pārvaldība</dd></div>
+          <div><dt>3 sektori</dt><dd>Valsts, finanšu un privātais</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="services">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Ko mēs darām</p>
+        <h2>Atrodam vājās vietas un palīdzam tās novērst un pārvaldīt.</h2>
+      </div>
+      <div class="grid3">
+        <div class="item"><h3><a href="/drosibas-auditi/">Drošības auditi</a></h3><p>Informācijas sistēmu drošības un veiktspējas auditi, IT pārvaldības un atbilstības auditi pret normatīvo aktu, regulatoru un standartu prasībām (ISO/IEC 27001, ISO/IEC 20000-1, ISO 22301), kā arī personas datu apstrādes auditi.</p></div>
+        <div class="item"><h3><a href="/mk-397-atbilstiba/">MK 397 atbilstība</a></h3><p>Palīdzam būtisko un svarīgo pakalpojumu sniedzējiem izpildīt Nacionālās kiberdrošības likuma un MK noteikumu Nr. 397 “Minimālās kiberdrošības prasības” prasības: esošās situācijas novērtējums, kiberrisku pārvaldības dokumentācija un kiberdrošības audits.</p></div>
+        <div class="item"><h3><a href="/iso-27001-ieviesana/">ISO 27001 ieviešana</a></h3><p>Informācijas drošības pārvaldības sistēmas ieviešana atbilstoši ISO/IEC 27001 no GAP audita līdz sertifikācijai: risku darba grupas, iekšējie auditi, vadības pārskati un atbalsts sertifikācijas auditā.</p></div>
+        <div class="item"><h3><a href="/kiberdrosibas-parvaldnieks/">Kiberdrošības pārvaldnieks kā pakalpojums</a></h3><p>Pieredzējis kiberdrošības pārvaldnieks (CISO) jūsu organizācijai ārpakalpojumā: risku reģistrs, piegādātāju izvērtēšana, incidentu vadība un darbinieku apmācības visa gada garumā.</p></div>
+        <div class="item"><h3>Ielaušanās testi</h3><p>Melnās, pelēkās un baltās kastes testi lietotnēm, tīkliem un organizācijai kopumā, vajadzības gadījumā ar koda pārbaudi un sociālās inženierijas testiem. Izmantojam OWASP un OSSTMM metodikas.</p></div>
+        <div class="item"><h3>Uzbrukuma virsmas novērtējums</h3><p>Pastāvīgi noskaidrojam, kas no jūsu infrastruktūras ir redzams internetā. Izmantojamās ievainojamības pirms nodošanas jums pārbauda drošības analītiķis.</p></div>
+        <div class="item"><h3>Riski un darbības nepārtrauktība</h3><p>Risku identificēšana, novērtēšana un mazināšanas plānošana pēc ISO 31000 un ISO 27005, kā arī darbības nepārtrauktības plānošana.</p></div>
+        <div class="item"><h3>Incidentu izmeklēšana</h3><p>Drošības incidentu izmeklēšana un pierādījumu ievākšana, ko var izmantot iekšējiem lēmumiem vai nodot tiesībsargājošajām iestādēm.</p></div>
+        <div class="item"><h3>Apmācības</h3><p>Sertificētas apmācības sadarbībā ar <a href="https://pecb.com" target="_blank" rel="noopener">PECB</a> un <a href="https://bda.lv" target="_blank" rel="noopener">BDA</a>, kā arī katram klientam pielāgoti un individuāli kursi: ieviešanas komandām, iekšējiem auditoriem un drošības apziņas apmācības visiem darbiniekiem pēc jūsu politikām.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section raised" id="expertise">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Kompetence</p>
+        <h2>Sertificēti cilvēki, ne tikai sertificētas metodes.</h2>
+        <p>Mūsu konsultanti ir auditori, testētāji un drošības pārvaldnieki ar starptautiski atzītiem sertifikātiem, kurus viņi gadiem izmanto darbā ar reālām sistēmām.</p>
+      </div>
+      <div class="cert-groups">
+        <div class="cert-group">
+          <h3>Audits un drošības pārvaldība</h3>
+          <ul class="chips">
+            <li>CISA</li><li>CISSP</li><li>ISO/IEC 27001 Lead Auditor</li><li>ISO/IEC 27001 Lead Implementer</li><li>ISO/IEC 20000 Lead Auditor</li><li>ISO 9001 Lead Auditor</li><li>ISO 55001 Lead Auditor</li><li>Certified Data Protection Officer</li>
+          </ul>
+        </div>
+        <div class="cert-group">
+          <h3>Testēšana, incidenti un digitālā ekspertīze</h3>
+          <ul class="chips">
+            <li>Certified Ethical Hacker (CEH)</li><li>Certified Lead Pen Test Professional</li><li>Certified Lead Forensics Examiner</li><li>ISO/IEC 27035 Lead Incident Manager</li><li>ISO/IEC 27032 Lead Cybersecurity Manager</li><li>SCADA drošība</li>
+          </ul>
+        </div>
+        <div class="cert-group">
+          <h3>Riski, nepārtrauktība un projektu vadība</h3>
+          <ul class="chips">
+            <li>ISO 31000 Risk Manager</li><li>ISO/IEC 27005</li><li>Management of Risk (M_o_R)</li><li>ISO 22301 Lead Auditor</li><li>ITIL</li><li>PRINCE2</li>
+          </ul>
+        </div>
+      </div>
+      <p class="note">Analytica ir iekļauta Aizsardzības ministrijas uzturētajā <a href="https://www.mod.gov.lv/sites/mod/files/document/Kiberdro%C5%A1%C4%ABbas%20auditoru%20saraksts_23_04_2026.pdf" target="_blank" rel="noopener">kiberdrošības auditoru sarakstā</a>.</p>
+    </div>
+  </section>
+
+  <section class="section" id="experience">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Pieredze</p>
+        <h2>Mūsu veiktie projekti</h2>
+        <p>Lielāko daļu mūsu darba aptver konfidencialitātes līgumi, tāpēc klientus raksturojam pēc nozares. Atsauksmes pieejamas pēc pieprasījuma.</p>
+      </div>
+      <div class="sectors">
+        <div class="sector">
+          <h3>Privātais sektors</h3>
+          <ul class="projects">
+            <li><span class="when">Kopš 2016</span><h4>IT integratori, programmatūras izstrādātāji un fintech uzņēmums</h4><p>ISO/IEC 27001 ieviešana līdz sertifikācijai, ieskaitot risku metodiku, incidentu un piegādātāju procedūras un ziņošanu augstākajai vadībai.</p></li>
+            <li><span class="when">2021</span><h4>IT pakalpojumu uzņēmums</h4><p>Informācijas drošības vadītāja (CISO) funkcija kā ārpakalpojums.</p></li>
+            <li><span class="when">Kopš 2023</span><h4>Privātais pensiju fonds</h4><p>Kiberdrošības pārvaldnieka pakalpojums visa gada garumā: risku reģistrs un mazināšanas plāns Wingman platformā, piegādātāju izvērtēšana, darbinieku apmācības, ielaušanās testi un DORA prasību izpilde.</p></li>
+            <li><span class="when">2026</span><h4>E-komercijas un azartspēļu uzņēmumi</h4><p>Ārējās uzbrukuma virsmas pārskati ar FriendlyFlare: kas par uzņēmumu redzams no interneta un kas no tā ir jālabo.</p></li>
+          </ul>
+        </div>
+        <div class="sector">
+          <h3>Valsts sektors</h3>
+          <ul class="projects">
+            <li><span class="when">2006–2013</span><h4>Valsts aģentūras</h4><p>Atbalsts ISO/IEC 27001 ieviešanā un iekšējie auditi zāļu jomas regulatoram un publisko finanšu iestādei, kā arī regulatora galvenās reģistra sistēmas IT audits.</p></li>
+            <li><span class="when">2012–2017</span><h4>IKT pakalpojumu sniedzējs</h4><p>Informācijas drošības un IT pakalpojumu pārvaldība izveidota līdz ISO/IEC 27001 un ISO/IEC 20000-1 sertifikācijai un pēc tam uzturēta kā pastāvīga drošības funkcija ar regulāriem testiem.</p></li>
+            <li><span class="when">2020–2021</span><h4>Valsts e-pārvaldes platformas un ministrijas</h4><p>Drošības novērtējumi valsts e-iepirkumu platformai, oficiālās elektroniskās adreses sistēmai un koplietošanas maksājumu modulim, kā arī ministriju informācijas sistēmu drošības un veiktspējas auditi.</p></li>
+            <li><span class="when">2026</span><h4>Valsts aģentūra un pašvaldības digitālais centrs</h4><p>ISO/IEC 27001:2022 iekšējais audits valsts uzraudzības aģentūrai un iedzīvotāju apkalpošanas sistēmas drošības un veiktspējas audits.</p></li>
+          </ul>
+        </div>
+      </div>
+      <p class="note">Analytica ir veiksmīgi realizējusi projektus visā pasaulē dažādu izmēru un sektoru klientiem, sākot no 10 līdz 100 000+ darbiniekiem.</p>
+    </div>
+  </section>
+
+  <section class="section raised" id="partners">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Partneri</p>
+        <h2>Partneri, ar kuriem strādājam.</h2>
+        <p>Ieteikumi darbojas ilgāk, ja tie dzīvo sistēmā, ko klients turpina lietot. Šie ir partneri, ar kuriem strādājam visciešāk.</p>
+      </div>
+      <div class="partners">
+        <article class="partner">
+          <div><h3>Wingman</h3><p class="by">Peak Defence produkts</p></div>
+          <p>Platforma informācijas drošības pārvaldības sistēmas uzturēšanai: riski, to mazināšanas plāni, uzdevumi un pierādījumi vienuviet. Ieviešam Wingman pie klientiem un kopā ar viņiem tajā vadām drošības programmu.</p>
+          <a class="more" href="https://peakdefence.ai" target="_blank" rel="noopener">peakdefence.ai</a>
+        </article>
+        <article class="partner">
+          <div><h3>FriendlyFlare</h3><p class="by">Uzbrukuma virsmas pārvaldība</p></div>
+          <p>Mākslīgajā intelektā balstīta ārējās uzbrukuma virsmas pārvaldība. Mašīna atrod, kas ir atklāts, drošības analītiķis apstiprina, kas ir patiess, un jūs saņemat īsu sarakstu ar to, kas jālabo. FriendlyFlare novērtējumus veic Analytica analītiķi.</p>
+          <a class="more" href="https://friendlyflare.com" target="_blank" rel="noopener">friendlyflare.com</a>
+        </article>
+        <article class="partner">
+          <div><h3>PECB</h3><p class="by">Apmācības un sertifikācija</p></div>
+          <p>Apmācību un sertifikācijas kursi ISO pārvaldības sistēmu standartos un drošības lomās, tostarp ISO/IEC 27001 Lead Implementer un Lead Auditor, NIS 2 un DORA. Vadām PECB kursus ieviešanas komandām un auditoriem.</p>
+          <a class="more" href="https://pecb.com" target="_blank" rel="noopener">pecb.com</a>
+        </article>
+        <article class="partner">
+          <div><h3>Qualys</h3><p class="by">Ievainojamību skenēšana un novērtēšana</p></div>
+          <p>Ievainojamību skenēšanas un novērtēšanas rīki. Izmantojam Qualys ievainojamību novērtējumos un regulārā klientu sistēmu skenēšanā.</p>
+          <a class="more" href="https://qualys.com" target="_blank" rel="noopener">qualys.com</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <svg class="gem" viewBox="0 0 54 64" aria-hidden="true"><path fill="#ffffff" d="M24.45 0 L6.15 37.4 C2.75 29.8 0.45 19.8 0.45 5.4 Q11.55 0 24.45 0Z M29.55 0 L47.85 37.4 C51.25 29.8 53.55 19.8 53.55 5.4 Q42.45 0 29.55 0Z"/><path fill="#ef4136" d="M27 25 L13.85 50.6 L27 63.3Z"/><path fill="#be1e2d" d="M27 25 L40.15 50.6 L27 63.3Z"/></svg>
+      <div class="section-head">
+        <h2>Pastāstiet, kas jāpārbauda.</h2>
+      </div>
+      <dl class="contact-grid">
+        <div><dt>E-pasts</dt><dd><span class="js-email" data-u="sjorib" data-d="vl.acitylana">birojs (at) analytica (punkts) lv</span></dd></div>
+        <div><dt>Tālrunis</dt><dd><a href="tel:+37167471283">+371 67471283</a></dd></div>
+        <div><dt>Adrese</dt><dd>Dzeņu iela 3, Sigulda, LV-2150</dd></div>
+      </dl>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>SIA Analytica · Reģ. Nr. 40003823267</span>
+    <span>© 2026 Analytica</span>
+  </div>
+</footer>
+<script>
+/* The address is not in the page source: it is stored reversed in two parts and assembled in the browser. */
+(function () {
+  var rev = function (s) { return s.split('').reverse().join(''); };
+  document.querySelectorAll('.js-email').forEach(function (el) {
+    var addr = rev(el.dataset.u) + String.fromCharCode(64) + rev(el.dataset.d);
+    var a = document.createElement('a');
+    a.href = 'mai' + 'lto:' + addr; a.textContent = addr;
+    el.replaceWith(a);
+  });
+})();
+</script>
+</body>
+</html>

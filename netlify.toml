@@ -1,0 +1,8 @@
+[build]
+  publish = "."
+  command = "python3 build.py"
+
+[[redirects]]
+  from = "/lv/*"
+  to = "/:splat"
+  status = 301

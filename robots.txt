@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /preview/
+Disallow: /src/
+
+Sitemap: https://analytica.lv/sitemap.xml

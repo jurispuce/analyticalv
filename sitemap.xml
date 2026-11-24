@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<url><loc>https://analytica.lv/</loc><xhtml:link rel="alternate" hreflang="lv" href="https://analytica.lv/"/><xhtml:link rel="alternate" hreflang="en" href="https://analytica.lv/en/"/></url>
+<url><loc>https://analytica.lv/en/</loc><xhtml:link rel="alternate" hreflang="lv" href="https://analytica.lv/"/><xhtml:link rel="alternate" hreflang="en" href="https://analytica.lv/en/"/></url>
+<url><loc>https://analytica.lv/drosibas-auditi/</loc><xhtml:link rel="alternate" hreflang="lv" href="https://analytica.lv/drosibas-auditi/"/><xhtml:link rel="alternate" hreflang="en" href="https://analytica.lv/en/security-audits/"/></url>
+<url><loc>https://analytica.lv/en/security-audits/</loc><xhtml:link rel="alternate" hreflang="lv" href="https://analytica.lv/drosibas-auditi/"/><xhtml:link rel="alternate" hreflang="en" href="https://analytica.lv/en/security-audits/"/></url>
+<url><loc>https://analytica.lv/mk-397-atbilstiba/</loc><xhtml:link rel="alternate" hreflang="lv" href="https://analytica.lv/mk-397-atbilstiba/"/><xhtml:link rel="alternate" hreflang="en" href="https://analytica.lv/en/cabinet-regulation-397-compliance/"/></url>
+<url><loc>https://analytica.lv/en/cabinet-regulation-397-compliance/</loc><xhtml:link rel="alternate" hreflang="lv" href="https://analytica.lv/mk-397-atbilstiba/"/><xhtml:link rel="alternate" hreflang="en" href="https://analytica.lv/en/cabinet-regulation-397-compliance/"/></url>
+<url><loc>https://analytica.lv/iso-27001-ieviesana/</loc><xhtml:link rel="alternate" hreflang="lv" href="https://analytica.lv/iso-27001-ieviesana/"/><xhtml:link rel="alternate" hreflang="en" href="https://analytica.lv/en/iso-27001-implementation/"/></url>
+<url><loc>https://analytica.lv/en/iso-27001-implementation/</loc><xhtml:link rel="alternate" hreflang="lv" href="https://analytica.lv/iso-27001-ieviesana/"/><xhtml:link rel="alternate" hreflang="en" href="https://analytica.lv/en/iso-27001-implementation/"/></url>
+<url><loc>https://analytica.lv/kiberdrosibas-parvaldnieks/</loc><xhtml:link rel="alternate" hreflang="lv" href="https://analytica.lv/kiberdrosibas-parvaldnieks/"/><xhtml:link rel="alternate" hreflang="en" href="https://analytica.lv/en/cybersecurity-manager/"/></url>
+<url><loc>https://analytica.lv/en/cybersecurity-manager/</loc><xhtml:link rel="alternate" hreflang="lv" href="https://analytica.lv/kiberdrosibas-parvaldnieks/"/><xhtml:link rel="alternate" hreflang="en" href="https://analytica.lv/en/cybersecurity-manager/"/></url>
+</urlset>
