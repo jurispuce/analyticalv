@@ -162,6 +162,19 @@ def jsonld(page, lang):
           {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": strip(a)}} for q, a in m['faq']]}]
     return json.dumps({"@context": "https://schema.org", "@graph": graph}, ensure_ascii=False)
 
+MENU_JS = """<script>
+/* Phone menu: close it after a link is chosen, on a tap outside, or on Escape. */
+(function () {
+  function closeAll(except) { document.querySelectorAll('details.menu[open]').forEach(function (d) { if (d !== except) d.open = false; }); }
+  document.addEventListener('click', function (e) {
+    var inside = e.target.closest('details.menu');
+    if (inside && e.target.closest('.menu-panel a')) inside.open = false;
+    closeAll(inside);
+  });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeAll(); });
+})();
+</script>
+"""
 ALL = ['home'] + ORDER + ['privacy']
 LINK = re.compile(r'(href|action)="@@P:(\w+)@@(?:#(\w+))?"')
 
@@ -201,7 +214,7 @@ for page in ALL + ['thanks']:
 {css}</style>
 </head>
 <body>
-{b}</body>
+{b}{MENU_JS}</body>
 </html>
 ''')
 
@@ -231,7 +244,7 @@ for lang in LANGS:
 {fonts}
 <style>
 {css}</style>
-{''.join(views)}<script>
+{''.join(views)}{MENU_JS}<script>
 (function () {{
   function show(view, anchor) {{
     var found = false;

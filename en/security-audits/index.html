@@ -202,6 +202,20 @@ p { margin: 0; }
 /* Single-column grids must not grow to fit their widest child, or the page gets wider than a phone screen. */
 .hero .wrap, .hero-copy, .section .wrap, .section-head, .contact .wrap, .page-hero .wrap, .thanks .wrap, .block, .sector, .doc, .doc section { grid-template-columns: minmax(0, 1fr); }
 .facts { grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); }
+
+/* Phone menu */
+.site-header { position: relative; }
+.menu { display: block; }
+.menu summary { list-style: none; display: grid; place-items: center; width: 40px; height: 40px; border: 1px solid var(--border-strong); border-radius: var(--radius-sm); color: var(--ink); cursor: pointer; }
+.menu summary::-webkit-details-marker { display: none; }
+.menu[open] summary { border-color: var(--ink); }
+.menu-panel { position: absolute; left: 0; right: 0; top: 100%; z-index: 20; display: grid; background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border-strong); padding-block: var(--space-2); }
+.nav .menu-panel a { font-family: var(--font-display); font-weight: 500; font-size: 20px; line-height: 26px; padding-block: 14px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); color: var(--ink); }
+.nav .menu-panel a + a { border-top: 1px solid var(--border); }
+@media (max-width: 859px) { .nav { gap: 12px; } }
+@media (max-width: 519px) { .nav > a.btn { display: none; } }
+@media (min-width: 720px) { .nav .menu-panel a { padding-left: 32px; padding-right: 32px; } }
+@media (min-width: 860px) { .menu { display: none; } }
 </style>
 </head>
 <body>
@@ -215,6 +229,16 @@ p { margin: 0; }
       <a class="nav-link" href="/en/#partners">Partners</a>
       <a class="lang" href="/drosibas-auditi/" lang="lv" hreflang="lv" aria-label="Latviešu valodā">LV</a>
       <a class="btn btn-primary" href="#contact">Contact</a>
+      <details class="menu">
+        <summary aria-label="Menu"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" fill="none" stroke="currentColor" stroke-width="2"/></svg></summary>
+        <div class="menu-panel">
+          <a href="/en/#services">Services</a>
+          <a href="/en/#expertise">Expertise</a>
+          <a href="/en/#experience">Experience</a>
+          <a href="/en/#partners">Partners</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </details>
     </nav>
   </div>
 </header>
@@ -309,5 +333,17 @@ p { margin: 0; }
     <span>© 2026 Analytica</span>
   </div>
 </footer>
+<script>
+/* Phone menu: close it after a link is chosen, on a tap outside, or on Escape. */
+(function () {
+  function closeAll(except) { document.querySelectorAll('details.menu[open]').forEach(function (d) { if (d !== except) d.open = false; }); }
+  document.addEventListener('click', function (e) {
+    var inside = e.target.closest('details.menu');
+    if (inside && e.target.closest('.menu-panel a')) inside.open = false;
+    closeAll(inside);
+  });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeAll(); });
+})();
+</script>
 </body>
 </html>

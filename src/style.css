@@ -179,3 +179,17 @@ p { margin: 0; }
 /* Single-column grids must not grow to fit their widest child, or the page gets wider than a phone screen. */
 .hero .wrap, .hero-copy, .section .wrap, .section-head, .contact .wrap, .page-hero .wrap, .thanks .wrap, .block, .sector, .doc, .doc section { grid-template-columns: minmax(0, 1fr); }
 .facts { grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); }
+
+/* Phone menu */
+.site-header { position: relative; }
+.menu { display: block; }
+.menu summary { list-style: none; display: grid; place-items: center; width: 40px; height: 40px; border: 1px solid var(--border-strong); border-radius: var(--radius-sm); color: var(--ink); cursor: pointer; }
+.menu summary::-webkit-details-marker { display: none; }
+.menu[open] summary { border-color: var(--ink); }
+.menu-panel { position: absolute; left: 0; right: 0; top: 100%; z-index: 20; display: grid; background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border-strong); padding-block: var(--space-2); }
+.nav .menu-panel a { font-family: var(--font-display); font-weight: 500; font-size: 20px; line-height: 26px; padding-block: 14px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); color: var(--ink); }
+.nav .menu-panel a + a { border-top: 1px solid var(--border); }
+@media (max-width: 859px) { .nav { gap: 12px; } }
+@media (max-width: 519px) { .nav > a.btn { display: none; } }
+@media (min-width: 720px) { .nav .menu-panel a { padding-left: 32px; padding-right: 32px; } }
+@media (min-width: 860px) { .menu { display: none; } }
