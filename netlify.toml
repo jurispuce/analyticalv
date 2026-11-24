@@ -1,6 +1,8 @@
+# The built pages are committed, so Netlify publishes the repository as it is, with no build step.
+# After editing files under src/, run `python3 build.py` locally and commit the result.
 [build]
   publish = "."
-  command = "python3 build.py"
+  command = ""
 
 [[redirects]]
   from = "/lv/*"

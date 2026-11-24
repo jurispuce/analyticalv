@@ -25,4 +25,4 @@ The build also writes `preview/analytica-site.html`, a single-file preview that 
 
 ## Deploying
 
-Netlify reads `netlify.toml`: it runs `python3 build.py` and publishes the repository root. The site address used for canonical links and the sitemap is set as `SITE` at the top of `build.py`.
+Netlify reads `netlify.toml` and publishes the repository root as it is, with no build step, so run `python3 build.py` and commit the built pages before pushing. The site address used for canonical links and the sitemap is set as `SITE` at the top of `build.py`.
